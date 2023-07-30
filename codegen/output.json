@@ -1,0 +1,10 @@
+{
+ "question": "Create a python function able to extract textual information from a pdf file called pdf_to_txt. Make sure to answer with the function only without example or other textual informations, to use latest versions of external modules and without giving recomendations",
+ "answer": [
+  "import PyPDF2\n\ndef pdf_to_txt(file_path):\n    with open(file_path, 'rb') as file:\n        reader = PyPDF2.PdfReader(file)\n        text = ''\n        for page in reader.pages:\n            text += page.extract_text()\n        return text",
+  "import PyPDF2\n\ndef pdf_to_txt(file_path):\n    with open(file_path, 'rb') as file:\n        reader = PyPDF2.PdfReader(file)\n        text = \"\"\n        for page in reader.pages:\n            text += page.extract_text()\n    return text",
+  "import PyPDF2\n\ndef pdf_to_txt(file_path):\n    with open(file_path, 'rb') as file:\n        pdf_reader = PyPDF2.PdfFileReader(file)\n        text = ''\n        for page in range(pdf_reader.numPages):\n            page_obj = pdf_reader.getPage(page)\n            text += page_obj.extract_text()\n    return text",
+  "import PyPDF2\n\ndef pdf_to_txt(file_path):\n    with open(file_path, 'rb') as file:\n        pdf_reader = PyPDF2.PdfFileReader(file)\n        num_pages = pdf_reader.numPages\n        extracted_text = ''\n\n        for page_num in range(num_pages):\n            page = pdf_reader.getPage(page_num)\n            extracted_text += page.extractText()\n\n    return extracted_text",
+  "import PyPDF2\n\ndef pdf_to_txt(file_path):\n    with open(file_path, 'rb') as file:\n        reader = PyPDF2.PdfReader(file)\n        num_pages = len(reader.pages)\n        text = ''\n        for page_num in range(num_pages):\n            page = reader.pages[page_num]\n            text += page.extract_text()\n        return text"
+ ]
+}

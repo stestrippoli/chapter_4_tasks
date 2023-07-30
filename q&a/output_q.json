@@ -1,0 +1,30 @@
+{
+ "question": "Extract 3 questions about previous text. Write only the questions, one in each line",
+ "answers": [
+  [
+   "1. What are the possible side effects of taking ZETAMICIN?",
+   "2. How should ZETAMICIN be stored?",
+   "3. What is the recommended dosage of ZETAMICIN for children and adolescents?"
+  ],
+  [
+   "1. What is the recommended dosage of ZETAMICIN for adults with normal kidney function?",
+   "2. What are the possible side effects of ZETAMICIN?",
+   "3. Can ZETAMICIN be used during pregnancy and breastfeeding?"
+  ],
+  [
+   "1. What are the possible side effects of ZETAMICIN?",
+   "2. How should ZETAMICIN be stored?",
+   "3. What is the recommended dosage of ZETAMICIN for children and adolescents?"
+  ],
+  [
+   "1. What are the possible side effects of taking ZETAMICIN?",
+   "2. How should ZETAMICIN be stored?",
+   "3. What is the recommended dosage of ZETAMICIN for children and adolescents?"
+  ],
+  [
+   "1. What are the possible side effects of ZETAMICIN?",
+   "2. How should ZETAMICIN be stored?",
+   "3. What does ZETAMICIN contain as its active ingredient?"
+  ]
+ ]
+}
