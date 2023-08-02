@@ -1,4 +1,4 @@
-# cap4-git
+# NLP Tasks
 
 Translation: Each folder in this repository represents a Natural Language Processing task. In order to test the models, simply insert your own OpenAI API key in place of the placeholder "YOUR_API_KEY."
 
