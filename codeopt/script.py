@@ -6,8 +6,9 @@ from utils import *
 
 
 task = "codeopt"
-openai.api_key = "<YOUR_API_KEY>"
-filename="main.rs"
+#openai.api_key = "<YOUR_API_KEY>"
+openai.api_key = "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"
+filename="lib.rs"
 
 
 context = rs_to_text(f"./{task}/{filename}")

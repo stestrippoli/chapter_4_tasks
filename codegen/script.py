@@ -3,7 +3,7 @@ import sys
 sys.path.append('..\\capitolo 4')
 from utils import *
 import json, os, openai
-
+'''
 task = "codegen"
 openai.api_key = "<YOUR_API_KEY>"
 
@@ -28,21 +28,25 @@ for i in range(5):
 
 with open(f"./{task}/output.json", "w") as f:
     json.dump(payload, f, indent=1)
-
-
-# Testing functions
 '''
+task = "codegen"
+f = open("./codegen/output.json")
+payload = json.load(f)
+for i in range(5):
+  answer = payload["answer"][i]
+# Testing functions
 
-f = open(f"{task}/output_code.py", "w") 
-print(answer)
-f.write(answer)
-f.close()
 
-from output_code import pdf_to_txt
+  f = open(f"codegen/output_code.py", "w") 
+  print(answer)
+  f.write(answer)
+  f.close()
 
-text = pdf_to_txt(f"./{task}/example.pdf")
-with open(f"{task}/output.txt", "w", encoding="utf-8") as f:
-    f.write(text)
+  from output_code import pdf_to_txt
+
+  text = pdf_to_txt(f"./{task}/example.pdf")
+  with open(f"{task}/output.txt", "w", encoding="utf-8") as f:
+      f.write(text)
 
  # Il modello funziona a tratti, implementa certe volte delle funzioni deprecate rispetto alle ultime rilasciate.
- '''
+ 
