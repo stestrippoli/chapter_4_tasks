@@ -1,0 +1,4 @@
+{
+ "question": "Go to the attic grasp the antique vase and place it on the display shelf.",
+ "answer": "[Navigation:attic], [Grasp:antique_vase], [Navigation:display_shelf], [Place]"
+}

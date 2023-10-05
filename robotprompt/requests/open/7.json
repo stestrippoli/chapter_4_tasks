@@ -1,0 +1,3 @@
+{
+ "question": "Head to the bathroom, pick up the towel, and place it on the towel rack.\n",
+ "answer": "[Navigation:bathroom], [Grasp:towel], [Navigation:towel_rack], [Place]"}

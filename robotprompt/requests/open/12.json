@@ -1,0 +1,3 @@
+{
+ "question": "Navigate to the library, grasp the red book, and place it on the table.\n",
+ "answer": "[Navigation:library], [Grasp:red_book], [Navigation:table], [Place]"}

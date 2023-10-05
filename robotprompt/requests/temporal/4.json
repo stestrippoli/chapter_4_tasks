@@ -1,0 +1,4 @@
+{
+ "question": "Go to the entrance, pick the leash and put it down in the living room. Then pick the keys, pass through the kitchen and put them in the stairs.\n",
+ "answer": "[Navigation:entrance], [Grasp:leash], [Navigation:living_room], [Place], [Grasp:keys], [Navigation:kitchen], [Navigation:stairs], [Place]"
+}

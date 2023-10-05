@@ -1,0 +1,4 @@
+{
+ "question": "Move to the garage, pick up the toolbox, and place it on the workbench.\n",
+ "answer": "[Navigation:garage], [Grasp:toolbox], [Navigation:workbench], [Place]"
+}

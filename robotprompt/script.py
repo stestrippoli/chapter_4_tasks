@@ -3,43 +3,148 @@ sys.path.append('..\\capitolo 4')
 from utils import *
 
 task = "robotprompt"
-openai.api_key = "<YOUR_API_KEY>"
-output = "output"
+#openai.api_key = "<YOUR_API_KEY>"
 
+openai.api_key = "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"
 
-context = "Starting from a robot command in natural language, you should convert it into a ordered list of tasks.\
-  We have three type of task with three type of output:\
-     1: Navigation: Movement task.  output: [Navigation:destination_name].\n \
-     2: Grasp: Grasp objects task.  output: [Grasp:object_to_be_grasped]\n \
-     3: Place: Place object, output: [Place].\
-     In the output include just the squared brackets format explained before.\
-    Mind that after a Place, you don't possess the object. Moreover, you can't have a Place if there is no Grasp task. A Place belongs to one Grasp (and so to ONE OBJECT).\
-    MOST IMPORTANT: be careful about the order of the navigations and target the place in which you have a Place. You can have MULTIPLE STOPS (so navigations) before a specific Place, so for first do a temporal analysis and find the right order.\
-    Example: \with the prompt \
-      \"take the bottle from the table, and take it to the chair after passing to the bathroom\" \
-    you should produce:\
-    [Navigation:table], [Grasp:Bottle], [Navigation:Bathroom], [Navigation:chair], [Place]."
+def gpt(context, request):
+    completion = openai.ChatCompletion.create(
+          model = "gpt-3.5-turbo-16k", 
+          temperature = 0.8,
+          max_tokens = 1000,
+          messages = [
+            {"role": "system", "content": "You are Spot, a robotic agent that translate command from Natural Language to list of tasks"},
+            {"role": "user", "content": context},
+            {"role": "user", "content": request},
+          ]
+        )
+    return completion.choices[0].message['content']
+
+def get_data(output):
+  true_output = []
+  request_list = []
+  for i in range(15): 
+      with open(f"./robotprompt/requests/{output}/{i}.json", "r") as f:
+         data = json.load(f)
+         true_output.append(data['answer'])
+         request_list.append(data['question'])
+  return true_output, request_list
+
+def prompt_evaluation(n, ver):
+  """
+  Create the ver-th evaluation of the n-th context.
+  """
+  outputs = ["closed", "open", "temporal"]
+  context_list = json.load(open("./robotprompt/context_list.json", "r"))
+  context = context_list[n]
+  context_results = {'context': context, "closed" : {}, "open" : {}}
+  print(f"\t\tCONTEXT {n}")
+  print("_____________\n"+context+"\n_____________")
+  for output in outputs:
+    print(f"_____________\nCATEGORY: {output}\n_____________")
+    
+    truth_list, request_list = get_data(output)   
+    output_results = {"positive" : 0, "percentage" : 0.0, "trials" : []}
+    
+    for idx in range(15):
+      request = request_list[idx]
+      answer = gpt(context, request)
+      truth = truth_list[idx]
+      
+      result = {'request_id':idx, 'request':request, 'answer':answer, 'truth':truth, 'result': check_results(truth, answer)}
+      output_results['trials'].append(result)
+
+      print(f"- Request {idx} done. ", end="")
+      if check_results(truth, answer):
+        output_results['positive'] += 1
+        print("🗸")
+      else:
+       print("X")
+       print(f"\t{answer}\n\t{truth}")
+      output_results["percentage"] = (output_results["positive"]/15) *100
+      context_results[output] = output_results
+  print("Context evaluation completed!")
+  for o in outputs:
+    print(f"\t\t\t ## {o.upper()} ## \nSUCCESS:{context_results[o]['positive']}/15 \t\t PERCENTAGE:{context_results[o]['percentage']}%")
+  fp = open(f"./robotprompt/results/general/context_{n}/v{ver}.json", "w")
+  json.dump(context_results, fp, indent=1)
+  fp.close()
   
-request = "Take the bottle over the robotics desk after passing through the Area42-entrance, and place it to the metaverse desk after stopping to the mobility desk. Then from the mobility desk where you are, grasp the bottle again and take it back to the starting point."
-payload = {"question" : request, "answer":[], "context":context}
+def check_results(truth, answer):
+   """
+   Compare truth and answer (in lower case) without unwanted punctuation.
+   """
+   truth = truth.strip(".").lower()
+   answer = answer.strip(".").lower()
+   return truth == answer
+
+def single_context_evaluation(category, n):
+  """
+  Evaluate a specific category using the n-context from the list of context.
+  """
+  context_list = json.load(open("/robotprompt/context_list.json", "r"))
+  truth_list, request_list = get_data(category)   
+  context = context_list[n]
+  context_results = {'context': context, "positive" : 0, "percentage" : 0.0, "trials" : []}
+  print(f"\t\tCONTEXT {n}")
+  print(context)
+  for idx in range(15):
+    request = request_list[idx]
+    answer = gpt(context, request)
+    truth = truth_list[idx]
+    result = {'request_id':idx, 'request':request, 'answer':answer, 'truth':truth, 'result': check_results(truth, answer)}
+    context_results['trials'].append(result)
+    print(f"- Request {idx} done. ", end="")
+    if check_results(truth, answer):
+        context_results['positive'] += 1
+        print("🗸")
+    else:
+       print("X")
+       print(f"\t{answer}\n\t{truth}")
+    fp = open(f"./robotprompt/results/{category}/context_{n}.json", "w")
+    context_results["percentage"] = (context_results["positive"]/15) *100
+    json.dump(context_results, fp, indent=1)
+    fp.close()
+  
+def custom_context_evaluation(category, context):
+  truth_list, request_list = get_data(category)   
+  context_results = {'context': context, "positive" : 0, "percentage" : 0.0, "trials" : []}
+  print(context)
+  for idx in range(15):
+    request = request_list[idx]
+    answer = gpt(context, request)
+    truth = truth_list[idx]
+    result = {'request_id':idx, 'request':request, 'answer':answer, 'truth':truth, 'result': check_results(truth, answer)}
+    context_results['trials'].append(result)
+    print(f"- Request {idx} done. ", end="")
+    if check_results(truth, answer):
+        context_results['positive'] += 1
+        print("🗸")
+    else:
+       print("X")
+       print(f"{request}\n\t{answer}\n\t{truth}")
+  print(f"{context_results['positive']}/15")  
 
 
-for i in range(5):
-  completion = openai.ChatCompletion.create(
-    model = "gpt-3.5-turbo", 
-    temperature = 0.8,
-    max_tokens = 1000,
-    messages = [
-      {"role": "system", "content": "You are Spot, a robotic agent that translate command from Natural Language to list of tasks"},
-      {"role": "user", "content": context},
-      {"role": "user", "content": request},
-    ]
-  )
+def stats():
+  stats = []
+  for i in range(7):
+      stats.append({"closed": 0, "open": 0, "temporal":0})
+      for j in range(5):
+        with open(f"{task}/results/general/context_{i}/v{j}.json") as f:
+           data = json.load(f)
+           for o in ["closed", "open", "temporal"]:
+            stats[i][o] += data[o]["positive"]
 
-  print(completion.choices[0].message['content'])
-  answer = completion.choices[0].message['content']
-  payload["answer"].append(answer)
+  f = open("./robotprompt/results/summary.txt", "w")    
+  for idx, s in enumerate(stats):
+    f.write(f"CONTEXT {idx}\n")
+    for key,value in s.items():
+       f.write(f"\t{key} : {round((value/75)*100, 2)}% ({value}/75)\n")
 
-with open(f"./{task}/{output}.json", "w") as f:
-    json.dump(payload, f, indent=1)
-
+if __name__ == "__main__":
+  
+  
+  #prompt_evaluation(6,0)
+  stats()
+  

@@ -1,0 +1,4 @@
+{
+ "question": "Take the phone from the desk in the office and place it into the room but only after you've moved the charger from the chair to the sofa.\n",
+ "answer": "[Navigation:chair], [Grasp:charger], [Navigation:sofa], [Place], [Navigation:office], [Navigation:desk], [Grasp:phone], [Navigation:room], [Place]"
+}

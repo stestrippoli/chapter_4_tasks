@@ -1,0 +1,4 @@
+{
+ "question": "Go to the metaverse desk, pick the water bottle and put it into the navigation desk just after passing in front of the logistic point.\n",
+ "answer": "[Navigation:metaverse_desk], [Grasp:water_bottle], [Navigation:logistic_point], [Navigation:navigation_desk], [Place]"
+}

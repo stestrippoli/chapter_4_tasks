@@ -1,0 +1,4 @@
+{
+ "question": "From the bathroom pick the perfume and put it in the laundry room after stepping by the entrance.\n",
+ "answer": "[Navigation:bathroom], [Grasp:perfume], [Navigation:entrance], [Navigation:laundry_room], [Place]"
+}

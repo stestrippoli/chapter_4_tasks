@@ -1,0 +1,4 @@
+{
+ "question": "Before picking the coat from the living room and moving it to the stairs, you need to pick the shoe from the bedroom and put it in the entrance.\n",
+ "answer": "[Navigation:bedroom], [Grasp:Shoe], [Navigation:entrance], [Place], [Navigation:living_room], [Grasp:Coat], [Navigation:stairs], [Place]"
+}

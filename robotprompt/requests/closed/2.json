@@ -1,0 +1,4 @@
+{
+ "question": "Move the paper from the chair to the table.\n",
+ "answer": "[Navigation:chair], [Grasp:paper], [Navigation:table], [Place]"
+}

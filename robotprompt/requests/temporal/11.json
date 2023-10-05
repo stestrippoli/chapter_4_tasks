@@ -1,0 +1,4 @@
+{
+ "question": "After picking the bag from the bedroom and placing it into the kitchen, go to the balcony and pick the towel. Then place the towel in the laundry room.\n",
+ "answer": "[Navigation:bedroom], [Grasp:bag], [Navigation:kitchen], [Place], [Navigation:balcony], [Grasp:towel], [Navigation:laundry_room], [Place]"
+}

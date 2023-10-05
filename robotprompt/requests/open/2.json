@@ -1,0 +1,4 @@
+{
+ "question": "Go to the bedroom, grasp the pillow, and place it on the bed.\n",
+ "answer": "[Navigation:bedroom], [Grasp:Pillow], [Navigation:bed], [Place]"
+}

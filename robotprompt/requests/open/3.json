@@ -1,0 +1,3 @@
+{
+ "question": "Head to the garden, pick up the flower pot, and place it on the patio.\n",
+ "answer": "[Navigation:garden], [Grasp:flower_pot], [Navigation:patio], [Place]"}

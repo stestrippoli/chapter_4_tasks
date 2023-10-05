@@ -1,0 +1,4 @@
+{
+ "question": "Go to the laundry room, grasp the detergent bottle, and place it on the washing machine.\n",
+ "answer": "[Navigation:laundry_room], [Grasp:detergent_bottle], [Navigation:washing_machine], [Place]"
+}

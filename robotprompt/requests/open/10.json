@@ -1,0 +1,3 @@
+{
+ "question": "Go to the basement, grasp the hammer, and place it on the tool rack.\n",
+ "answer": "[Navigation:basement], [Grasp:hammer], [Navigation:tool_rack], [Place]"}

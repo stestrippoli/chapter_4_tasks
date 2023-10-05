@@ -1,0 +1,4 @@
+{
+ "question": "Navigate to the study room, grasp the pen, and place it on the desk.\n",
+ "answer": "[Navigation:study_room], [Grasp:pen], [Navigation:desk], [Place]"
+}

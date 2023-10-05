@@ -1,0 +1,4 @@
+{
+ "question": "Bring the remote from the living room and bring it to the kitchen after passing through the hallway. Then, pick it again and put it back in the living room.\n",
+ "answer": "[Navigation:living_room], [Grasp:remote], [Navigation:hallway], [Navigation:kitchen], [Place], [Grasp:remote], [Navigation:living_room], [Place]"
+}

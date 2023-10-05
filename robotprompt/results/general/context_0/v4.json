@@ -1,0 +1,336 @@
+{
+ "context": "Starting from a robot command in natural language, you should convert it into a ordered list of tasks.  We have three type of task with three type of output:     1: Navigation: Movement task with output [Navigation:destination_name]    2: Grasp: Grasp task with output [Grasp:object_to_be_grasped]     3: Place: No attribute, with output [Place]",
+ "seen": {
+  "positive": 0,
+  "percentage": 0.0,
+  "trials": [
+   {
+    "request_id": 0,
+    "request": "Navigate to the Bathroom and grasp the Bottle, then place it on the Table.\n",
+    "answer": "1. Navigation: Navigate to the Bathroom\n2. Grasp: Grasp the Bottle\n3. Place: Place the Bottle on the Table",
+    "truth": "[Navigation:Bathroom], [Grasp:Bottle], [Navigation:Table], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 1,
+    "request": "Move towards the Chair, pick up the Paper with a Grasp, and carefully place it in the Bathroom.\n",
+    "answer": "1. Navigation: Move towards the Chair\n2. Grasp: Pick up the Paper\n3. Place: Carefully place it in the Bathroom",
+    "truth": "[Navigation:Chair], [Grasp:Paper], [Navigation:Bathroom], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 2,
+    "request": "Go to the Table, grasp the Glass, and then navigate to the Chair to put it down.\n",
+    "answer": "1. Navigation: Go to the Table\n2. Grasp: Grasp the Glass\n3. Navigation: Navigate to the Chair\n4. Place: Put it down",
+    "truth": "[Navigation:Table], [Grasp:Glass], [Navigation:Chair], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 3,
+    "request": "Start by navigating to the Bathroom, grasp the Bottle, and proceed to place it on the Chair.\n",
+    "answer": "1. Navigation to the Bathroom [Navigation:Bathroom]\n2. Grasp the Bottle [Grasp:Bottle]\n3. Place the Bottle on the Chair [Place]",
+    "truth": "[Navigation:Bathroom], [Grasp:Bottle], [Navigation:Chair], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 4,
+    "request": "With a Grasp, take the Paper and navigate to the Table, where you can carefully put it down.\n",
+    "answer": "List of Tasks:\n1. Grasp the Paper. [Grasp:Paper]\n2. Navigate to the Table. [Navigation:Table]\n3. Place the Paper carefully on the Table. [Place]",
+    "truth": "[Grasp:Paper], [Navigation:Table], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 5,
+    "request": "Move towards the Chair, grasp the Glass, and then navigate to the Bathroom to place it.\n",
+    "answer": "1. Navigation: Move towards the Chair\n2. Grasp: Grasp the Glass\n3. Navigation: Navigate to the Bathroom\n4. Place",
+    "truth": "[Navigation:Chair], [Grasp:Glass], [Navigation:Bathroom], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 6,
+    "request": "Begin by navigating to the Table, grasp the Bottle, and proceed to place it in the Chair.\n",
+    "answer": "1. Navigation task: Navigate to the Table\n2. Grasp task: Grasp the Bottle\n3. Navigation task: Navigate to the Chair\n4. Place task: Place the Bottle in the Chair",
+    "truth": "[Navigation:Table], [Grasp:Bottle], [Navigation:Chair], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 7,
+    "request": "Take the Paper with a Grasp, navigate to the Chair, and gently place it in the Bathroom.\n",
+    "answer": "1. Grasp the Paper. [Grasp:Paper]\n2. Navigate to the Chair. [Navigation:Chair]\n3. Place the Paper in the Bathroom. [Place]",
+    "truth": "[Grasp:Paper], [Navigation:Chair], [Navigation:Bathroom], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 8,
+    "request": "Go to the Bathroom, grasp the Glass, and then navigate to the Table to put it down.\n",
+    "answer": "Here is the ordered list of tasks:\n1. Navigation to the Bathroom [Navigation:Bathroom]\n2. Grasp the Glass [Grasp:Glass]\n3. Navigation to the Table [Navigation:Table]\n4. Place the Glass down [Place]",
+    "truth": "[Navigation:Bathroom], [Grasp:Glass], [Navigation:Table], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 9,
+    "request": "Start by navigating to the Chair, grasp the Bottle, and proceed to place it in the Bathroom.\n",
+    "answer": "1. Navigation: Navigate to the Chair [Navigation:Chair]\n2. Grasp: Grasp the Bottle [Grasp:Bottle]\n3. Navigation: Navigate to the Bathroom [Navigation:Bathroom]\n4. Place: Place the Bottle [Place]",
+    "truth": "[Navigation:Chair], [Grasp:Bottle], [Navigation:Bathroom], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 10,
+    "request": "With a Grasp, take the Glass and navigate to the Table, where you can carefully put it down.\n",
+    "answer": "1. Grasp the Glass [Grasp:Glass]\n2. Navigate to the Table [Navigation:Table]\n3. Place the Glass on the Table [Place]",
+    "truth": "[Grasp:Glass], [Navigation:Table], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 11,
+    "request": "Move towards the Table, grasp the Paper, and then navigate to the Chair to place it.\n",
+    "answer": "1. Navigation: Move towards the Table\n2. Grasp: Grasp the Paper\n3. Navigation: Navigate to the Chair\n4. Place",
+    "truth": "[Navigation:Table], [Grasp:Paper], [Navigation:Chair], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 12,
+    "request": "Begin by navigating to the Bathroom, grasp the Glass, and proceed to place it on the Table.\n",
+    "answer": "1. Navigation: Go to the Bathroom\n2. Grasp: Grasp the Glass\n3. Navigation: Go to the Table\n4. Place",
+    "truth": "[Navigation:Bathroom], [Grasp:Glass], [Navigation:Table], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 13,
+    "request": "Take the Bottle with a Grasp, navigate to the Chair, and gently place it in the Bathroom.\n",
+    "answer": "1. Grasp the bottle. (Output: [Grasp:bottle])\n2. Navigate to the chair. (Output: [Navigation:chair])\n3. Gently place the bottle in the bathroom. (Output: [Place])",
+    "truth": "[Grasp:Bottle], [Navigation:Chair], [Navigation:Bathroom], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 14,
+    "request": "Go to the Chair, grasp the Paper, and then navigate to the Table to put it down.\n",
+    "answer": "1. Navigation: Go to the Chair\n2. Grasp: Grasp the Paper\n3. Navigation: Navigate to the Table\n4. Place: Place it down",
+    "truth": "[Navigation:Chair], [Grasp:Paper], [Navigation:Table], [Place]",
+    "result": false
+   }
+  ]
+ },
+ "unseen": {
+  "positive": 0,
+  "percentage": 0.0,
+  "trials": [
+   {
+    "request_id": 0,
+    "request": "Navigate to the kitchen, grasp the apple, and place it on the dining table.\n",
+    "answer": "Here is the ordered list of tasks:\n\n1. Navigation: Navigate to the kitchen.\n2. Grasp: Grasp the apple.\n3. Place: Place the apple on the dining table.",
+    "truth": "[Navigation:kitchen], [Grasp:apple], [Navigation:dining_table], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 1,
+    "request": "Move to the living room, pick up the book, and place it on the bookshelf.\n",
+    "answer": "1. Navigation: Move to the living room.\n2. Grasp: Pick up the book.\n3. Place: Place the book on the bookshelf.",
+    "truth": "[Navigation:living_room], [Grasp:book], [Navigation:bookshelf], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 2,
+    "request": "Go to the bedroom, grasp the pillow, and place it on the bed.\n",
+    "answer": "List of tasks:\n1. Navigation: Go to the bedroom\n2. Grasp: Grasp the pillow\n3. Place: Place the pillow on the bed",
+    "truth": "[Navigation:bedroom], [Grasp:Pillow], [Navigation:bed], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 3,
+    "request": "Head to the garden, pick up the flower pot, and place it on the patio.\n",
+    "answer": "1. Navigation: Head to the garden.\n2. Grasp: Pick up the flower pot.\n3. Place: Place the flower pot on the patio.",
+    "truth": "[Navigation:garden], [Grasp:flower_pot], [Navigation:patio], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 4,
+    "request": "Navigate to the study room, grasp the pen, and place it on the desk.\n",
+    "answer": "1. Navigation: Move to the study room. [Navigation:study_room]\n2. Grasp: Grasp the pen. [Grasp:pen]\n3. Place: Place the pen on the desk. [Place]",
+    "truth": "[Navigation:study_room], [Grasp:pen], [Navigation:desk], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 5,
+    "request": "Move to the garage, pick up the toolbox, and place it on the workbench.\n",
+    "answer": "1. Navigation: Move to the garage [Navigation:garage]\n2. Grasp: Pick up the toolbox [Grasp:toolbox]\n3. Place: Place the toolbox on the workbench [Place]",
+    "truth": "[Navigation:garage], [Grasp:toolbox], [Navigation:workbench], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 6,
+    "request": "Go to the laundry room, grasp the detergent bottle, and place it on the washing machine.\n",
+    "answer": "1. Navigation: Go to the laundry room\n2. Grasp: Grasp the detergent bottle\n3. Place: Place the detergent bottle on the washing machine",
+    "truth": "[Navigation:laundry_room], [Grasp:detergent_bottle], [Navigation:washing_machine], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 7,
+    "request": "Head to the bathroom, pick up the towel, and place it on the towel rack.\n",
+    "answer": "1. Navigation: Head to the bathroom\n2. Grasp: Pick up the towel\n3. Place: Place the towel on the towel rack",
+    "truth": "[Navigation:bathroom], [Grasp:towel], [Navigation:towel_rack], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 8,
+    "request": "Navigate to the balcony, grasp the plant, and place it on the railing.\n",
+    "answer": "1. Navigation: Navigate to the balcony [Navigation:balcony]\n2. Grasp: Grasp the plant [Grasp:plant]\n3. Place: Place the plant on the railing [Place]",
+    "truth": "[Navigation:balcony], [Grasp:plant], [Navigation:railing], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 9,
+    "request": "Move to the attic, pick up the old photograph, and place it in the storage box.\n",
+    "answer": "1. Navigation: Move to the attic\n2. Grasp: Pick up the old photograph\n3. Place: Place the old photograph in the storage box",
+    "truth": "[Navigation:attic], [Grasp:old_photograph], [Navigation:storage_box], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 10,
+    "request": "Go to the basement, grasp the hammer, and place it on the tool rack.\n",
+    "answer": "List of tasks:\n1. Navigation: Go to the basement\n2. Grasp: Grasp the hammer\n3. Place: Place it on the tool rack",
+    "truth": "[Navigation:basement], [Grasp:hammer], [Navigation:tool_rack], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 11,
+    "request": "Head to the backyard, pick up the soccer ball, and place it in the storage shed.\n",
+    "answer": "1. Navigation: Head to the backyard\n2. Grasp: Pick up the soccer ball\n3. Place: Place the soccer ball in the storage shed",
+    "truth": "[Navigation:backyard], [Grasp:Soccer_ball], [Navigation:storage_shed], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 12,
+    "request": "Navigate to the library, grasp the bookshelf, and place it against the wall.\n",
+    "answer": "1. Navigation: Navigate to the library [Navigation:library]\n2. Grasp: Grasp the bookshelf [Grasp:bookshelf]\n3. Place: Place the bookshelf against the wall [Place]",
+    "truth": "[Navigation:library], [Grasp:bookshelf], [Navigation:wall], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 13,
+    "request": "Move to the nursery, pick up the stuffed animal, and place it in the toy chest.\n",
+    "answer": "1. Navigation: Move to the nursery [Navigation:nursery]\n2. Grasp: Pick up the stuffed animal [Grasp:stuffed_animal]\n3. Place: Place the stuffed animal in the toy chest [Place]",
+    "truth": "[Navigation:nursery], [Grasp:stuffed_animal], [Navigation:toy_chest], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 14,
+    "request": "Go to the attic, grasp the antique vase, and place it on the display shelf.\n",
+    "answer": "Task List:\n1. Navigation: Go to the attic\n2. Grasp: Grasp the antique vase\n3. Place: Place the antique vase on the display shelf",
+    "truth": "[Navigation:attic], [Grasp:antique_vase], [Navigation:display_shelf], [Place]",
+    "result": false
+   }
+  ]
+ },
+ "manual": {
+  "positive": 0,
+  "percentage": 0.0,
+  "trials": [
+   {
+    "request_id": 0,
+    "request": "After passing in front of the Red Office, go to the vending machine, pick the snack and come back in the Green Office.\n",
+    "answer": "1. Navigation: Go to the Red Office\n2. Navigation: Go to the vending machine\n3. Grasp: Pick the snack\n4. Navigation: Go to the Green Office\n5. Place",
+    "truth": "[Navigation:Red_Office], [Navigation:vending_machine], [Grasp:snack], [Navigation:Green_Office], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 1,
+    "request": "You're in the entrance. Pick the toothbrush in the bathroom, put it in the bin on the balcony and go back to the kitchen. Then proceed to pick the glass and put it in the bedroom after passing through the hallway. Go back to the starting point.\n",
+    "answer": "1. Navigation: Move to the bathroom\n2. Grasp: Pick the toothbrush\n3. Place: Put the toothbrush in the bin on the balcony\n4. Navigation: Move to the kitchen\n5. Navigation: Move to the hallway\n6. Grasp: Pick the glass\n7. Navigation: Move to the bedroom\n8. Place: Put the glass in the bedroom\n9. Navigation: Move to the starting point",
+    "truth": "[Navigation:bathroom], [Grasp:toothbrush], [Navigation:balcony], [Place], [Navigation:kitchen], [Grasp:glass], [Navigation:hallway], [Navigation:bedroom], [Place], [Navigation:entrance]",
+    "result": false
+   },
+   {
+    "request_id": 2,
+    "request": "Bring the remote from the living room and bring it to the kitchen after passing through the hallway. Then, pick it again and put it back in the living room.\n",
+    "answer": "List of tasks:\n1. Navigation: Move to the living room. (Output: [Navigation:living room])\n2. Grasp: Grasp the remote. (Output: [Grasp:remote])\n3. Navigation: Move to the kitchen passing through the hallway. (Output: [Navigation:kitchen])\n4. Place. (Output: [Place])\n5. Grasp: Grasp the remote. (Output: [Grasp:remote])\n6. Navigation: Move back to the living room. (Output: [Navigation:living room])\n7. Place. (Output: [Place])",
+    "truth": "[Navigation:living_room], [Grasp:remote], [Navigation:hallway], [Navigation:kitchen], [Place], [Grasp:remote], [Navigation:kitchen], [Navigation:hallway], [Navigation:living_room], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 3,
+    "request": "From the bathroom pick the perfume and put it in the laundry room after stepping by the entrance.\n",
+    "answer": "1. Navigation: Go to the bathroom.\n2. Grasp: Pick the perfume.\n3. Navigation: Go to the entrance.\n4. Navigation: Go to the laundry room.\n5. Place: Put the perfume in the laundry room.",
+    "truth": "[Navigation:bathroom], [Grasp:perfume], [Navigation:entrance], [Navigation:laundry_room], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 4,
+    "request": "Go to the entrance, pick the leash and put it on the living room floor. Then pick the keys, pass through the kitchen and put them in the stairs.\n",
+    "answer": "1. Navigation: Go to the entrance [Navigation:entrance]\n2. Grasp: Pick the leash [Grasp:leash]\n3. Place: Put the leash on the living room floor [Place]\n4. Grasp: Pick the keys [Grasp:keys]\n5. Navigation: Pass through the kitchen [Navigation:kitchen]\n6. Place: Put the keys in the stairs [Place]",
+    "truth": "[Navigation:entrance], [Grasp:leash], [Navigation:living_room], [Place], [Grasp:keys], [Navigation:kitchen], [Navigation:stairs], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 5,
+    "request": "Go to the metaverse desk, pick the water bottle and put it into the navigation desk just after passing in front of the logistic point.\n",
+    "answer": "Here is the ordered list of tasks:\n1. Navigation: Go to the metaverse desk.\n2. Grasp: Pick the water bottle.\n3. Navigation: Go to the navigation desk.\n4. Navigation: Pass in front of the logistic point.\n5. Place: Put the water bottle on the navigation desk.",
+    "truth": "[Navigation:metaverse_desk], [Grasp:water_bottle], [Navigation:logistic_point], [Navigation:navigation_desk], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 6,
+    "request": "You're in Area42. Move to the office 342, pick the phone on the table and move it to the office 343. Then come back to the starting point.\n",
+    "answer": "List of tasks:\n1. Navigation: Move to office 342\n2. Grasp: Grasp the phone on the table\n3. Navigation: Move to office 343\n4. Place: Place the phone\n5. Navigation: Return to the starting point",
+    "truth": "[Navigation:office_342], [Grasp:phone], [Navigation:office_343], [Place], [Navigation:Area42]",
+    "result": false
+   },
+   {
+    "request_id": 7,
+    "request": "Bring to the main entrance the book from the disco room. Then, pass through office32 and office33. Come back and leave it.\n",
+    "answer": "List of tasks:\n1. Navigation: Go to the disco room.\n2. Grasp: Grasp the book.\n3. Navigation: Go to the main entrance.\n4. Place: Leave the book.\n5. Navigation: Go to office32.\n6. Navigation: Go to office33.\n7. Navigation: Return to the main entrance.",
+    "truth": "[Navigation:disco_room], [Grasp:book], [Navigation:main_entrance], [Navigation:office32], [Navigation:office33], [Navigation:main_entrance], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 8,
+    "request": "Before picking the book from the library and put it in the kitchen floor, please move the bottle from the table to the desk.\n",
+    "answer": "1. Navigation: Move the bottle from the table to the desk. [Navigation:desk]\n2. Grasp: Grasp the book from the library. [Grasp:book]\n3. Place: Place the book on the kitchen floor. [Place]",
+    "truth": "[Navigation:table], [Grasp:Bottle], [Navigation:desk], [Place], [Navigation:library], [Grasp:book], [Navigation:kitchen], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 9,
+    "request": "Take the phone from the office desk and place it into the room but only after moving the charger from the chair to the sofa.\n",
+    "answer": "1. Grasp: object_to_be_grasped = phone from the office desk\n2. Navigation: destination_name = room\n3. Grasp: object_to_be_grasped = charger from the chair\n4. Place\n5. Navigation: destination_name = sofa",
+    "truth": "[Navigation:chair], [Grasp:charger], [Navigation:sofa], [Place], [Navigation:desk], [Grasp:phone], [Navigation:room], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 10,
+    "request": "Go to the laundry, pick the detergent and place it in the bathroom. Then, after passing in front of the main entrance, take the coat from the kitchen and move it in the bedroom. \n",
+    "answer": "1. Navigation: Go to the laundry\n2. Grasp: Pick the detergent\n3. Place: Place the detergent in the bathroom\n4. Navigation: Pass in front of the main entrance\n5. Grasp: Take the coat from the kitchen\n6. Navigation: Move the coat to the bedroom",
+    "truth": "[Navigation:laundry], [Grasp:Detergent], [Navigation:bathroom], [Place], [Navigation:main_entrance], [Navigation:kitchen], [Grasp:Coat], [Navigation:bedroom], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 11,
+    "request": "After picking the bag from the bedroom and placing it into the kitchen, go to the balcony and pick the towel. Then place the towel in the laundry room.\n",
+    "answer": "1. Navigation: Go to the bedroom.\n2. Grasp: Pick up the bag from the bedroom.\n3. Navigation: Go to the kitchen.\n4. Place: Place the bag in the kitchen.\n5. Navigation: Go to the balcony.\n6. Grasp: Pick up the towel from the balcony.\n7. Navigation: Go to the laundry room.\n8. Place: Place the towel in the laundry room.",
+    "truth": "[Navigation:bedroom], [Grasp:bag], [Navigation:kitchen], [Place], [Navigation:balcony], [Grasp:towel], [Navigation:laundry_room], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 12,
+    "request": "From the Area42, pick the charger and put it in the office 411. Then go to the disco room after stepping to the office c1.\n",
+    "answer": "1. Navigation: Go to Area42\n2. Grasp: Pick the charger\n3. Navigation: Go to office 411\n4. Place: Put the charger\n5. Navigation: Go to the office c1\n6. Navigation: Go to the disco room",
+    "truth": "[Navigation:Area42], [Grasp:Charger], [Navigation:office_411], [Place], [Navigation:office_c1], [Navigation:disco_room]",
+    "result": false
+   },
+   {
+    "request_id": 13,
+    "request": "Before picking the coat from the living room and move it to the stairs you need to pick the shoe from the bedroom and put it in the entrance.\n",
+    "answer": "1. Grasp: Pick the shoe from the bedroom\n2. Place: Put the shoe in the entrance\n3. Grasp: Pick the coat from the living room\n4. Navigation: Move to the stairs\n5. Place: Put the coat on the stairs",
+    "truth": "[Navigation:bedroom], [Grasp:Shoe], [Navigation:entrance], [Place], [Navigation:living_room], [Grasp:Coat], [Navigation:stairs], [Place]",
+    "result": false
+   },
+   {
+    "request_id": 14,
+    "request": "Take the mug from the kitchen to the office1 but only after you picked the coffee from the office2 and moved it to the kitchen.",
+    "answer": "1. Grasp: coffee from office2 [Grasp:coffee]\n2. Navigation: Move from office2 to kitchen [Navigation:kitchen]\n3. Grasp: mug from kitchen [Grasp:mug]\n4. Navigation: Move from kitchen to office1 [Navigation:office1]\n5. Place [Place]",
+    "truth": "[Navigation:office2], [Grasp:Coffee], [Navigation:kitchen],[Place], [Grasp:Mug], [Navigation:office1], [Place]",
+    "result": false
+   }
+  ]
+ }
+}

@@ -1,0 +1,3 @@
+{
+ "question": "Move to the attic, pick up the old photograph, and place it in the storage box.\n",
+ "answer": "[Navigation:attic], [Grasp:old_photograph], [Navigation:storage_box], [Place]"}

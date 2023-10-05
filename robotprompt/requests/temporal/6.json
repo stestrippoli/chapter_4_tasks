@@ -1,0 +1,4 @@
+{
+ "question": "You're in Area42. Move to the office 342, pick the phone on the table and move it to the office 343. Then come back to the starting point.\n",
+ "answer": "[Navigation:office_342], [Grasp:phone], [Navigation:office_343], [Place], [Navigation:Area42]"
+}

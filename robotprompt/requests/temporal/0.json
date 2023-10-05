@@ -1,0 +1,4 @@
+{
+ "question": "After passing in front of the Red Office, go to the vending machine, pick the snack and come back in the Green Office.\n",
+ "answer": "[Navigation:Red_Office], [Navigation:vending_machine], [Grasp:snack], [Navigation:Green_Office], [Place]"
+}

@@ -1,0 +1,4 @@
+{
+ "question": "Take the mug from the kitchen and move it to the office1, but only when you already have picked the coffee from the office2 and have moved it to the kitchen.",
+ "answer": "[Navigation:office2], [Grasp:Coffee], [Navigation:kitchen], [Place], [Grasp:Mug], [Navigation:office1], [Place]"
+}

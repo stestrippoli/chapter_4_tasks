@@ -1,0 +1,4 @@
+{
+ "question": "Bring the book from the disco room to the main entrance. Then, pass through office32 and office33. Come back and leave it.\n",
+ "answer": "[Navigation:disco_room], [Grasp:book], [Navigation:main_entrance], [Navigation:office32], [Navigation:office33], [Navigation:main_entrance], [Place]"
+}

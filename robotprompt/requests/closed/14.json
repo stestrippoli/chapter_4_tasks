@@ -1,0 +1,4 @@
+{
+ "question": "Once you arrived at the table, pick the bottle and drop it on the chair.",
+ "answer": "[Navigation:table], [Grasp:bottle], [Navigation:chair], [Place]"
+}

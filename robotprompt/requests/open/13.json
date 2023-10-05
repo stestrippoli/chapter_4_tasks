@@ -1,0 +1,3 @@
+{
+ "question": "Move to the nursery, pick up the stuffed animal and put it in the toy chest.\n",
+ "answer": "[Navigation:nursery], [Grasp:stuffed_animal], [Navigation:toy_chest], [Place]"}

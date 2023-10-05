@@ -1,0 +1,4 @@
+{
+ "question": "You're in the entrance. Pick the toothbrush in the bathroom, put it in the bin on the balcony and go back to the kitchen. Then proceed to pick the glass and put it in the bedroom after passing through the hallway. Go back to the starting point.\n",
+ "answer": "[Navigation:bathroom], [Grasp:toothbrush], [Navigation:balcony], [Place], [Navigation:kitchen], [Grasp:glass], [Navigation:hallway], [Navigation:bedroom], [Place], [Navigation:entrance]"
+}

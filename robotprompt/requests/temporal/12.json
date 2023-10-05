@@ -1,0 +1,4 @@
+{
+ "question": "From the Area42, pick the charger and put it in the office 411. Then go to the disco room after stepping to the office c1.\n",
+ "answer": "[Navigation:Area42], [Grasp:Charger], [Navigation:office_411], [Place], [Navigation:office_c1], [Navigation:disco_room]"
+}

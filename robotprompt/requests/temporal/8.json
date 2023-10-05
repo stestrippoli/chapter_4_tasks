@@ -1,0 +1,4 @@
+{
+ "question": "Before picking the book from the library and put it in the kitchen, please move the bottle from the table to the desk.\n",
+ "answer": "[Navigation:table], [Grasp:Bottle], [Navigation:desk], [Place], [Navigation:library], [Grasp:book], [Navigation:kitchen], [Place]"
+}

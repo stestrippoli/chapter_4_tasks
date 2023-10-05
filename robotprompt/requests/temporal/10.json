@@ -1,0 +1,4 @@
+{
+ "question": "Go to the laundry, pick the detergent and place it in the bathroom. Then, after passing in front of the main entrance, take the coat from the kitchen and move it in the bedroom. \n",
+ "answer": "[Navigation:laundry], [Grasp:Detergent], [Navigation:bathroom], [Place], [Navigation:main_entrance], [Navigation:kitchen], [Grasp:Coat], [Navigation:bedroom], [Place]"
+}

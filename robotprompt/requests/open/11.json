@@ -1,0 +1,4 @@
+{
+ "question": "Head to the backyard, pick up the soccer ball, and place it in the storage shed.\n",
+ "answer": "[Navigation:backyard], [Grasp:Soccer_ball], [Navigation:storage_shed], [Place]"
+}

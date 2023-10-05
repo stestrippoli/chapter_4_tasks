@@ -1,0 +1,28 @@
+CONTEXT 0
+	seen : 0.0% (0/75)
+	unseen : 0.0% (0/75)
+	manual : 0.0% (0/75)
+CONTEXT 1
+	seen : 22.67% (17/75)
+	unseen : 0.0% (0/75)
+	manual : 4.0% (3/75)
+CONTEXT 2
+	seen : 69.33% (52/75)
+	unseen : 58.67% (44/75)
+	manual : 4.0% (3/75)
+CONTEXT 3
+	seen : 70.67% (53/75)
+	unseen : 94.67% (71/75)
+	manual : 8.0% (6/75)
+CONTEXT 4
+	seen : 81.33% (61/75)
+	unseen : 93.33% (70/75)
+	manual : 34.67% (26/75)
+CONTEXT 5
+	seen : 100.0% (75/75)
+	unseen : 96.0% (72/75)
+	manual : 57.33% (43/75)
+CONTEXT 6
+	seen : 100.0% (75/75)
+	unseen : 74.67% (56/75)
+	manual : 56.0% (42/75)

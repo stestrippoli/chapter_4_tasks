@@ -1,0 +1,4 @@
+{
+ "question": "Move to the living room, pick up the book, and place it on the bookshelf.\n",
+ "answer": "[Navigation:living_room], [Grasp:book], [Navigation:bookshelf], [Place]"
+}
