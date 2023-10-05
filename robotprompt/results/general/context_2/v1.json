@@ -1,6 +1,6 @@
 {
  "context": "Starting from a robot command in natural language, you should convert it into a ordered list of tasks.  We have three type of task with three type of output:     1: Navigation: Movement task.  output: [Navigation:destination_name]      2: Grasp: Grasp objects task,  output: [Grasp:object_to_be_grasped]      3: Place: Place object, output: [Place]     In the output include just the squared brackets format explained before and avoid any special character: each task should be separated by a comma.  Whenever there is a Grasp task, be careful on considering where the object should be placed and therefore Navigate to it",
- "seen": {
+ "closed": {
   "positive": 12,
   "percentage": 80.0,
   "trials": [
@@ -111,7 +111,7 @@
    }
   ]
  },
- "unseen": {
+ "open": {
   "positive": 7,
   "percentage": 46.666666666666664,
   "trials": [
@@ -222,7 +222,7 @@
    }
   ]
  },
- "manual": {
+ "temporal": {
   "positive": 0,
   "percentage": 0.0,
   "trials": [
