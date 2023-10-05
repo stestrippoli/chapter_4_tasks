@@ -127,8 +127,11 @@ def custom_context_evaluation(category, context):
 
 
 def stats():
+  """
+  Create the general statistics calculating the average of each percentage.
+  """
   stats = []
-  for i in range(7):
+  for i in range(6):
       stats.append({"closed": 0, "open": 0, "temporal":0})
       for j in range(5):
         with open(f"{task}/results/general/context_{i}/v{j}.json") as f:
@@ -145,6 +148,6 @@ def stats():
 if __name__ == "__main__":
   
   
-  #prompt_evaluation(6,0)
+  prompt_evaluation(5,4)
   stats()
   
